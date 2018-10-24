@@ -5,7 +5,7 @@ module.exports={Start}
 
 function Start(){
 //#region  异步读取字符串
-fs.readFile('test.txt','utf-8',function(err,data){
+fs.readFile('./file/test.txt','utf-8',function(err,data){
  if(err)
  {
     console.log(err);
@@ -20,7 +20,7 @@ fs.readFile('test.txt','utf-8',function(err,data){
 //#region  同步读取字符串
 try{
     console.log('同步读取文件--------------------------');
-    var data= fs.readFileSync('test.txt','utf-8');
+    var data= fs.readFileSync('./file/test.txt','utf-8');
     console.log(data);
 }catch(err){
     console.log(err);
@@ -28,14 +28,14 @@ try{
 //#endregion
 
 //#region  异步读取文件
-fs.readFile("Icon.jpg",function(err,data){
+fs.readFile("./file/Icon.jpg",function(err,data){
     console.log('异步读取文件--------------------------');
     if (err){
         console.log(err);
     }else{
         //写入文件
         console.log('异步写入文件--------------------------');
-        fs.writeFile('IconBak.jpg',data,function(err){
+        fs.writeFile('./file/IconBak.jpg',data,function(err){
         if (err)
         {
             console.log(err);
@@ -48,7 +48,7 @@ fs.readFile("Icon.jpg",function(err,data){
 //#endregion
 
 //#region  获取文件信息
-fs.stat("IconBak.jpg",function(err,data){
+fs.stat("./file/IconBak.jpg",function(err,data){
     if(err){
         console.log(err);
     }else{
