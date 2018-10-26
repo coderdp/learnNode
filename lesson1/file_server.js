@@ -9,11 +9,13 @@ var root = path.resolve(process.argv[2] || '.');
 
 console.log('Static root dir: ' + root);
 
+
 var server=http.createServer(function(request,response){
     // 获得URL的path，类似 '/css/bootstrap.css':
     var pathname = url.parse(request.url).pathname;
      // 获得对应的本地文件路径，类似 '/srv/www/css/bootstrap.css':
      var filepath = path.join(root, pathname);//拼接文件地址
+        
       // 获取文件状态:
     fs.stat(filepath, function (err, stats) {
         if (!err && stats.isFile()) {
