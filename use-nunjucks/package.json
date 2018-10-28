@@ -1,0 +1,5 @@
+{
+    "dependencies": {
+        "nunjucks": "2.4.2"
+    }
+}

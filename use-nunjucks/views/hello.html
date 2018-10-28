@@ -1,0 +1,14 @@
+<h1>Hello: {{ name }}</h1>
+<h2>Age: {{ age }}</h1>
+    {% if age>=16 %}
+    <h3>成年人</h3>>
+    {% else %}
+    <h3>未成年人</h3>>
+    {% endif %}
+    <ul>
+            {% for item in data %}
+           {% if item.id>1 %}
+           <li>id>0,{{  item.id }}</li>
+           {% endif %}
+            {% endfor %}
+    </ul>
